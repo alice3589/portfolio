@@ -378,3 +378,11 @@ body.menu-open{ overflow: hidden;}
   --reserve-left: 240px;/* ヘッダー内でぶつからないよう確保する幅（必要に応じて調整） */
 }
 
+/* 全体のスクロールバーUIだけ隠す */
+html { scrollbar-width: none; }          /* Firefox */
+body { -ms-overflow-style: none; }       /* 旧Edge/IE */
+
+*::-webkit-scrollbar {                   /* Chrome / Safari / 新Edge */
+  width: 0;
+  height: 0;
+}
