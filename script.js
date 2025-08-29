@@ -20,6 +20,43 @@ navToggle?.addEventListener('click', () => {
   navList.style.display = expanded ? 'none' : 'flex';
 });
 
+// === Overlay menu open/close ===
+const menu = document.getElementById('menu');
+const closeBtn = menu?.querySelector('.menu-close');
+
+function opemMenu(){
+  menu?.classList.add('open');
+  document.body.classList.add('menu-open');
+  navToggle?.setAttribute('aria-hidden', 'false');
+  menu?.querySelector('.menu-grid a')?.focus();
+}
+
+function closeMenu(){
+  menu?.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  nevToggle?.setAttribute('aria-expanded', 'false');
+  menu?.setAttribute('aria-hidden', 'true');
+  navToggle?.focus();
+}
+
+navToggle?.addEventListener('click', () => {
+  if (!menu) return;
+  const isOpen = menu.classList.contains('open');
+  isOpen ? closeMenu() : openMenu();
+});
+
+menu?.addEventListener('click', (e) => {
+  if (e.target === menu) closeMenu();
+});
+
+closeBtn?.addEventListener('click', closeMenu);
+
+window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+menu?.querySelectorAll('.menu-grid a').forEach(a =>
+  a.addEventListener('click', () => closeMenu())
+);
+
 // ===== Active link on scroll =====
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-list a');
