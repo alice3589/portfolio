@@ -94,9 +94,9 @@ a:hover{ text-decoration: underline; }
 
 /* ====== Hero ====== */
 .hero{ padding-top: 110px; }
-.eyebrow{ letter-spacing:.15em; text-transform: uppercase; color: var(--muted); }
+.eyebrow{ letter-spacing:.15em; text-transform: uppercase; color: black; }
 .headline{ font-size: clamp(28px, 4vw, 46px); line-height:1.15; margin:0; }
-.lede{ font-size: clamp(16px, 2vw, 20px); color: var(--muted); }
+.lede{ font-size: clamp(16px, 2vw, 20px); color: black; }
 
 .hero-card{ padding:0; overflow:hidden; }
 .hero-art{ aspect-ratio: 1 / 1; background: radial-gradient(80% 80% at 20% 20%, color-mix(in oklab, var(--accent-1), transparent 70%), transparent), linear-gradient(120deg, color-mix(in oklab, var(--accent-2), transparent 70%), transparent); border-radius: var(--radius); }
