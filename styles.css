@@ -230,3 +230,36 @@ h2{
   font-weight: 600;
   color: var(--text);
 }
+
+/* === Fullscreen background image (site-wide) === */
+:root{
+  /* お好みで差し替え */
+  --bg-img: url("assets/images/bg.webp");
+  --bg-vignette: linear-gradient(
+    to bottom,
+    color-mix(in oklab, black, transparent 70%) 0%,
+    color-mix(in oklab, black, transparent 75%) 40%,
+    color-mix(in oklab, black, transparent 82%) 100%
+  );
+}
+
+/* 本体は透過でOK（既存の var(--bg) を残しても、この擬似要素が上回ります） */
+html, body { background: transparent; }
+
+/* スクロールしても動かない固定背景（iOSの background-attachment: fixed 問題回避） */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    var(--bg-vignette),
+    var(--bg-img) center / cover no-repeat;
+  will-change: transform;
+  transform: translateZ(0); /* スクロール時の描画最適化 */
+}
+
+/* セクションの背景が濃すぎる場合は少し透けさせると“画像が見える” */
+.section { background: color-mix(in oklab, var(--surface-2), transparent 35%); }
+/* 文字の可読性が落ちるなら陰を少しだけ */
+.headline, h2 { text-shadow: 0 1px 12px rgba(0,0,0,.25); }
