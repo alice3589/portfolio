@@ -386,3 +386,13 @@ body { -ms-overflow-style: none; }       /* 旧Edge/IE */
   width: 0;
   height: 0;
 }
+
+.menu-social img{
+  width: 24px;
+  height: 24px;
+  display: block;          /* 余計な隙間を防ぐ */
+  transition: transform .15s ease;
+}
+.menu-social a:hover img{
+  transform: scale(1.1);   /* お好み：ホバーで少し拡大 */
+}
