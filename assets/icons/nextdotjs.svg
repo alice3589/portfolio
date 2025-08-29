@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <defs>
-    <style>
-      .t { font: 700 44px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans JP', Helvetica, Arial, sans-serif; fill: #fff; }
-    </style>
-  </defs>
-  <rect x="8" y="8" width="112" height="112" rx="20" fill="#111111"/>
-  <text class="t" x="64" y="68" text-anchor="middle" dominant-baseline="central">NX</text>
-</svg>
