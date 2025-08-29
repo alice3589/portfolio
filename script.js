@@ -23,18 +23,41 @@ navToggle?.addEventListener('click', () => {
 // ===== Active link on scroll =====
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-list a');
+
+const setActive = (id) => {
+  navLinks.forEach(a => {
+    const onThis = a.getAttribute('href') === `#${id}`;
+    a.classList.toggle('active', onThis);
+  });
+};
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const id = entry.target.getAttribute('id');
     const link = document.querySelector(`.nav-list a[href="#${id}"]`);
     if (!link) return;
     if (entry.isIntersecting) {
-      navLinks.forEach(a => a.classList.remove('active'));
-      link.classList.add('active');
+      setActive(id);
     }
   });
 }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.1 });
 sections.forEach(s => observer.observe(s));
+
+const aboutEl = document.getElementById('about');
+const headOffset = 100;
+
+function maybeDefaultToAbout(){
+  if (!aboutEl) return;
+  const aboutTop = aboutEl.getBoundingClientRect().top + window.scrollY;
+  if (window.scrollY <= Math.max(10, aboutTop - headOffset)) {
+    setActive('about');
+  }
+}
+window.addEventListener('scroll', maybeDefaultToAbout, {passive: true});
+window.addEventListener('load', maybeDefaultToAbout);
+window.addEventListener('hashchange', () => {
+  if (location.hash === '' || location.hash === '#top') setActive('about');
+});
 
 // ===== Reveal on scroll =====
 const revealEls = document.querySelectorAll('.reveal');
