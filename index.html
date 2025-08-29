@@ -6,9 +6,8 @@
   <title>ポートフォリオ — IWASAKI Ryuto</title>
   <meta name="description" content="私の作品・スキル・経歴をまとめたポートフォリオサイトです。" />
   <meta name="color-scheme" content="light dark" />
-  <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+<script defer src="script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">メインにスキップ</a>
@@ -20,7 +19,6 @@
           <span class="brand-mark" aria-hidden="true">◆</span> <span>Portfolio</span>
         </a>
         <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切替" title="テーマ切替">🌓</button>
-        <button id="nav-toggle" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">≡</button>
         <ul class="nav-list" id="nav-list">
           <li><a href="#about">自己紹介</a></li>
           <li><a href="#skills">スキル</a></li>
@@ -32,24 +30,24 @@
     </div>
   </header>
 
-  <div id="menu" class="menu-overlay" aria-hidden="true">
-    <button class="menu-close" aria-label="メニューを閉じる">✕</button>
-
-    <nav class="menu=panel" aria-label="サイドメニュー">
-      <ul class="menu-grid">
-        <li><a herf="#top">TOP</a></li>
-        <li><a herf="#about">ABOUT</a></li>
-        <li><a herf="#skills">SKILLS</a></li>
-        <li><a herf="#projects">PROJECTS</a></li>
-      </ul>
-
-      <p class="menu-social-label">MY ACCOUNT</p>
+  <button class="hamburger-morph" aria-label="メニュー" aria-controls="morph-menu" aria-expanded="false">
+    <svg class="hamburger-morph__icon" width="48" height="48" viewBox="0 0 100 100" aria-hidden="true">
+      <path class="hamburger-morph__line" d="M 20,29 H 80 C 80,29 94.5,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+      <path class="hamburger-morph__line" d="M 20,50 H 80" />
+      <path class="hamburger-morph__line" d="M 20,71 H 80 C 80,71 94.5,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+    </svg>
+  </button>
+  
+  <nav id="morph-menu" class="nav-morph" aria-hidden="true">
+    <div class="nav-morph__wrapper">
+      <ul class="nav-morph__list"><!-- JS で #nav-list から複製して入れる --></ul>
+      <p class="nav-morph__social">MY ACCOUNT</p>
       <div class="menu-social">
         <a href="https://x.com/yourid" aria-label="X">X</a>
         <a href="https://youtube.com/@yourid" aria-label="YouTube">YouTube</a>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 
   <main id="main">
     <!-- Hero -->

@@ -338,3 +338,72 @@ body.menu-open{ overflow: hidden;}
   border: 1px solid var(--border); border-radius: 10px;
   background: var(--surface); color: var(--text); font-weight: 700;
 }
+
+/* === Morph hamburger === */
+.hamburger-morph{
+  position: fixed; top:20px; right:20px; z-index:1000;
+  width:48px; height:48px; border:0; background:transparent; padding:0; cursor:pointer;
+}
+.hamburger-morph__icon{ width:100%; height:100%; }
+.hamburger-morph__line{ fill:none; stroke:var(--text); stroke-width:6; transition: stroke-dasharray .6s, stroke-dashoffset .6s; }
+.hamburger-morph__line:nth-child(1), .hamburger-morph__line:nth-child(3){ stroke-dasharray:60 207; }
+.hamburger-morph__line:nth-child(2){ stroke-dasharray:60 60; }
+.hamburger-morph.active .hamburger-morph__line:nth-child(1),
+.hamburger-morph.active .hamburger-morph__line:nth-child(3){ stroke-dasharray:90 207; stroke-dashoffset:-134; }
+.hamburger-morph.active .hamburger-morph__line:nth-child(2){ stroke-dasharray:1 60; stroke-dashoffset:-30; }
+
+/* overlay */
+.nav-morph{
+  position:fixed; inset:0; z-index:999;
+  display:flex; align-items:center; justify-content:center;
+  background: color-mix(in oklab, var(--bg-2), transparent 12%);
+  backdrop-filter: blur(14px) saturate(1.05);
+  -webkit-backdrop-filter: blur(14px) saturate(1.05);
+  clip-path: circle(0% at calc(100% - 44px) 44px);
+  -webkit-clip-path: circle(0% at calc(100% - 44px) 44px);
+  transition: clip-path .7s cubic-bezier(.4,0,.2,1), -webkit-clip-path .7s cubic-bezier(.4,0,.2,1);
+}
+.nav-morph.active{
+  clip-path: circle(150% at calc(100% - 44px) 44px);
+  -webkit-clip-path: circle(150% at calc(100% - 44px) 44px);
+}
+
+/* grid */
+.nav-morph__wrapper{ width:min(100%, 1100px); padding: clamp(16px,3vw,32px); }
+.nav-morph__list{
+  display:grid; gap: clamp(12px,2vw,24px);
+  grid-template-columns: repeat(3, minmax(220px,1fr));
+  list-style:none; padding:0; margin:0 0 20px;
+}
+@media (max-width: 960px){ .nav-morph__list{ grid-template-columns: repeat(2, minmax(200px,1fr)); } }
+@media (max-width: 560px){ .nav-morph__list{ grid-template-columns: 1fr; } }
+
+.nav-morph__item{ opacity:0; transform: translateY(20px); transition: opacity .4s, transform .4s; }
+.nav-morph.active .nav-morph__item{ opacity:1; transform:none; }
+.nav-morph.active .nav-morph__item:nth-child(1){ transition-delay:.25s; }
+.nav-morph.active .nav-morph__item:nth-child(2){ transition-delay:.33s; }
+.nav-morph.active .nav-morph__item:nth-child(3){ transition-delay:.41s; }
+.nav-morph.active .nav-morph__item:nth-child(4){ transition-delay:.49s; }
+.nav-morph.active .nav-morph__item:nth-child(5){ transition-delay:.58s; }
+.nav-morph__link{
+  display:grid; place-items:center; min-height:84px;
+  color:var(--text); text-decoration:none; font-weight:700; font-size:20px;
+  border:1px solid var(--border); border-radius:12px; box-shadow: var(--shadow);
+  background: color-mix(in oklab, var(--surface), transparent 30%);
+}
+.nav-morph__link:hover{ transform: translateY(-1px); }
+
+/* social row */
+.nav-morph__social{ text-align:center; color:var(--muted); margin:8px 0 10px; }
+.menu-social{ display:flex; justify-content:center; gap:16px; }
+.menu-social a{ display:inline-grid; place-items:center; width:44px; height:44px; border:1px solid var(--border); border-radius:10px; background:var(--surface); color:var(--text); }
+
+/* ==== pin theme + brand to far-left ==== */
+:root{
+  --pin-left: 12px;     /* 端からの余白 */
+  --pin-top: 18px;      /* 縦位置 */
+  --theme-size: 2.6rem; /* themeボタンの実サイズ */
+  --gap: 12px;          /* themeとbrandの間 */
+  --reserve-left: 240px;/* ヘッダー内でぶつからないよう確保する幅（必要に応じて調整） */
+}
+

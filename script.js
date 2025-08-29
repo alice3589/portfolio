@@ -11,6 +11,7 @@ themeToggle?.addEventListener('click', () => {
   localStorage.setItem('theme', next);
 });
 
+
 // ===== Mobile nav =====
 const navToggle = document.getElementById('nav-toggle');
 const navList = document.getElementById('nav-list');
@@ -20,42 +21,46 @@ navToggle?.addEventListener('click', () => {
   navList.style.display = expanded ? 'none' : 'flex';
 });
 
-// === Overlay menu open/close ===
-const menu = document.getElementById('menu');
-const closeBtn = menu?.querySelector('.menu-close');
+/// === Morph menu ===
+const hamburger = document.querySelector('.hamburger-morph');
+const morphNav  = document.getElementById('morph-menu');
+const morphList = morphNav?.querySelector('.nav-morph__list');
 
-function opemMenu(){
-  menu?.classList.add('open');
-  document.body.classList.add('menu-open');
-  navToggle?.setAttribute('aria-hidden', 'false');
-  menu?.querySelector('.menu-grid a')?.focus();
+// 1) #nav-list から項目を複製（文字はそのまま）
+const srcLinks = document.querySelectorAll('#nav-list a');
+if (morphList && srcLinks.length){
+  morphList.innerHTML = '';
+  srcLinks.forEach(a => {
+    const li = document.createElement('li');
+    li.className = 'nav-morph__item';
+    const link = document.createElement('a');
+    link.className = 'nav-morph__link';
+    link.href = a.getAttribute('href') || '#';
+    link.textContent = a.textContent?.trim() || '';
+    li.appendChild(link);
+    morphList.appendChild(li);
+  });
 }
 
-function closeMenu(){
-  menu?.classList.remove('open');
-  document.body.classList.remove('menu-open');
-  nevToggle?.setAttribute('aria-expanded', 'false');
-  menu?.setAttribute('aria-hidden', 'true');
-  navToggle?.focus();
+function toggleMorph(open){
+  const willOpen = open ?? !hamburger.classList.contains('active');
+  hamburger.classList.toggle('active', willOpen);
+  morphNav?.classList.toggle('active', willOpen);
+  hamburger.setAttribute('aria-expanded', String(willOpen));
+  morphNav?.setAttribute('aria-hidden', String(!willOpen));
+  document.body.style.overflow = willOpen ? 'hidden' : '';
+  if (willOpen) morphNav?.querySelector('.nav-morph__link')?.focus();
 }
 
-navToggle?.addEventListener('click', () => {
-  if (!menu) return;
-  const isOpen = menu.classList.contains('open');
-  isOpen ? closeMenu() : openMenu();
+hamburger?.addEventListener('click', () => toggleMorph());
+morphNav?.addEventListener('click', (e) => { if (e.target === morphNav) toggleMorph(false); });
+window.addEventListener('keydown', (e) => { if (e.key === 'Escape') toggleMorph(false); });
+// 2) メニュー内リンクを押したら閉じる
+morphNav?.addEventListener('click', (e) => {
+  const t = e.target;
+  if (t instanceof HTMLElement && t.closest('.nav-morph__link')) toggleMorph(false);
 });
 
-menu?.addEventListener('click', (e) => {
-  if (e.target === menu) closeMenu();
-});
-
-closeBtn?.addEventListener('click', closeMenu);
-
-window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-
-menu?.querySelectorAll('.menu-grid a').forEach(a =>
-  a.addEventListener('click', () => closeMenu())
-);
 
 // ===== Active link on scroll =====
 const sections = document.querySelectorAll('section[id]');
