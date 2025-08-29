@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ポートフォリオ — あなたの名前</title>
+  <meta name="description" content="あなたの作品・スキル・経歴をまとめたポートフォリオサイトです。" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">メインにスキップ</a>
+
+  <header class="site-header" id="top" role="banner">
+    <div class="container header-inner">
+      <nav class="nav" aria-label="メイン">
+        <a class="brand" href="#top" aria-label="ホーム">
+          <span class="brand-mark" aria-hidden="true">◆</span> <span>Portfolio</span>
+        </a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切替" title="テーマ切替">🌓</button>
+        <button id="nav-toggle" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">≡</button>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#about">自己紹介</a></li>
+          <li><a href="#skills">スキル</a></li>
+          <li><a href="#projects">制作物</a></li>
+          <li><a href="#experience">経歴</a></li>
+          <li><a href="#contact">連絡先</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="section hero" aria-label="ヒーロー">
+      <div class="container grid-2">
+        <div class="stack gap-3">
+          <p class="eyebrow">こんにちは、</p>
+          <h1 class="headline">あなたの名前<span class="accent"> / Your Name</span></h1>
+          <p class="lede">
+            Web / ゲーム / アプリ開発に取り組むエンジニア・クリエイターです。ユーザーに価値を届けるUI・性能・体験づくりが得意です。
+          </p>
+          <div class="row gap-2">
+            <a class="btn primary" href="#projects">制作物を見る</a>
+            <a class="btn" href="#contact">連絡する</a>
+          </div>
+        </div>
+        <div class="card hero-card reveal" aria-hidden="true">
+          <div class="hero-art" role="img" aria-label="抽象的な幾何学アート">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0" stop-color="var(--accent-1)"/>
+                  <stop offset="1" stop-color="var(--accent-2)"/>
+                </linearGradient>
+              </defs>
+              <rect width="500" height="500" fill="var(--surface-2)"/>
+              <circle cx="160" cy="180" r="120" fill="url(#g)"/>
+              <rect x="260" y="240" width="180" height="180" rx="28" fill="url(#g)" opacity="0.6"/>
+              <path d="M60 400 C180 260, 320 540, 460 360" fill="none" stroke="url(#g)" stroke-width="18" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about" aria-label="自己紹介">
+      <div class="container grid-2">
+        <div class="stack gap-2">
+          <h2>自己紹介</h2>
+          <p>
+            ここにプロフィール文を記載します。強み・興味・得意分野・使用技術・目標などを簡潔に。
+            例）「Next.js・TypeScriptでのフロントエンド開発と、C++でのゲームツール開発が得意です。」
+          </p>
+          <ul class="checklist">
+            <li>ユーザー中心の設計と思考</li>
+            <li>パフォーマンス最適化・アクセシビリティ</li>
+            <li>チーム開発・ドキュメント作成</li>
+          </ul>
+          <div class="row gap-1">
+            <a class="chip" href="#" aria-label="GitHub">GitHub</a>
+            <a class="chip" href="#" aria-label="X / Twitter">X</a>
+            <a class="chip" href="#" aria-label="Qiita">Qiita</a>
+          </div>
+        </div>
+        <div class="card reveal">
+          <h3>基本情報</h3>
+          <dl class="meta">
+            <div><dt>活動拠点</dt><dd>日本 / リモート可</dd></div>
+            <div><dt>得意領域</dt><dd>Web / ゲーム / 自動化</dd></div>
+            <div><dt>使用言語</dt><dd>HTML, CSS, JS/TS, C++, Python</dd></div>
+            <div><dt>興味</dt><dd>UIデザイン, 高速化, 体験設計</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section alt" id="skills" aria-label="スキル">
+      <div class="container">
+        <h2>スキル</h2>
+        <div class="tags reveal">
+          <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Next.js</span>
+          <span class="tag">Node.js</span><span class="tag">C++</span><span class="tag">Python</span>
+          <span class="tag">Git / GitHub</span><span class="tag">UI/UX</span><span class="tag">Performance</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects" aria-label="制作物">
+      <div class="container">
+        <div class="row between center">
+          <h2>制作物</h2>
+          <a class="link" href="#" aria-label="すべて見る">すべて見る →</a>
+        </div>
+
+        <div class="grid-3 cards">
+          <!-- Project Card 1 -->
+          <article class="card project reveal">
+            <div class="thumb" aria-hidden="true">
+              <div class="thumb-art"></div>
+            </div>
+            <div class="card-body">
+              <h3>プロジェクト名</h3>
+              <p class="muted">プロジェクトの概要。技術スタック、目的、成果などを一言で。</p>
+              <div class="row gap-1 wrap">
+                <span class="tag small">HTML</span><span class="tag small">CSS</span><span class="tag small">JS</span>
+              </div>
+              <div class="row gap-1">
+                <a class="btn sm" href="#" target="_blank" rel="noopener">デモ</a>
+                <a class="btn sm ghost" href="#" target="_blank" rel="noopener">ソース</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="card project reveal">
+            <div class="thumb" aria-hidden="true"><div class="thumb-art"></div></div>
+            <div class="card-body">
+              <h3>プロジェクト名</h3>
+              <p class="muted">プロジェクトの概要。使用技術や工夫点など。</p>
+              <div class="row gap-1 wrap">
+                <span class="tag small">Next.js</span><span class="tag small">TS</span><span class="tag small">UI</span>
+              </div>
+              <div class="row gap-1">
+                <a class="btn sm" href="#" target="_blank" rel="noopener">デモ</a>
+                <a class="btn sm ghost" href="#" target="_blank" rel="noopener">ソース</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="card project reveal">
+            <div class="thumb" aria-hidden="true"><div class="thumb-art"></div></div>
+            <div class="card-body">
+              <h3>プロジェクト名</h3>
+              <p class="muted">プロジェクトの概要。課題解決や成果を端的に。</p>
+              <div class="row gap-1 wrap">
+                <span class="tag small">C++</span><span class="tag small">Tools</span><span class="tag small">Perf</span>
+              </div>
+              <div class="row gap-1">
+                <a class="btn sm" href="#" target="_blank" rel="noopener">デモ</a>
+                <a class="btn sm ghost" href="#" target="_blank" rel="noopener">ソース</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section alt" id="experience" aria-label="経歴">
+      <div class="container">
+        <h2>経歴</h2>
+        <ol class="timeline reveal">
+          <li>
+            <div class="dot"></div>
+            <div class="content">
+              <h3>会社 / 学校名 <small>2023 — 現在</small></h3>
+              <p class="muted">役割や学習内容、成果などを記載。</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot"></div>
+            <div class="content">
+              <h3>コミュニティ / 個人活動 <small>2021 — 2023</small></h3>
+              <p class="muted">オープンソース、技術記事、登壇など。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-label="連絡先">
+      <div class="container grid-2">
+        <div class="stack gap-2">
+          <h2>連絡先</h2>
+          <p>お仕事のご相談、コラボのご提案などお気軽にどうぞ。</p>
+          <ul class="list">
+            <li>メール: <a href="mailto:you@example.com">you@example.com</a></li>
+            <li>GitHub: <a href="#" target="_blank" rel="noopener">github.com/your-id</a></li>
+          </ul>
+        </div>
+        <form class="card form reveal" aria-label="お問い合わせフォーム" onsubmit="handleSubmit(event)">
+          <label>お名前 <input name="name" required placeholder="山田 太郎"></label>
+          <label>メール <input type="email" name="email" required placeholder="you@example.com"></label>
+          <label>件名 <input name="subject" placeholder="ご用件"></label>
+          <label>内容 <textarea name="message" rows="5" required placeholder="お問い合わせ内容"></textarea></label>
+          <button class="btn primary" type="submit">送信（メール作成）</button>
+          <p class="muted xs">※ このフォームはメールクライアントを起動する簡易版です。バックエンド不要。</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container row between center wrap gap-1">
+      <small>© <span id="year"></span> あなたの名前</small>
+      <a class="btn sm ghost" href="#top">↑ トップへ</a>
+    </div>
+  </footer>
+</body>
+</html>
