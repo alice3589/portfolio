@@ -13,21 +13,6 @@
   <a class="skip-link" href="#main">メインにスキップ</a>
 
   <header class="site-header" id="top" role="banner">
-    <div class="container header-inner">
-      <nav class="nav" aria-label="メイン">
-        <a class="brand" href="#top" aria-label="ホーム">
-          <span class="brand-mark" aria-hidden="true">◆</span> <span>Portfolio</span>
-        </a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切替" title="テーマ切替">🌓</button>
-        <ul class="nav-list" id="nav-list">
-          <li><a href="#about">自己紹介</a></li>
-          <li><a href="#skills">スキル</a></li>
-          <li><a href="#projects">制作物</a></li>
-          <li><a href="#experience">経歴</a></li>
-          <li><a href="#contact">連絡先</a></li>
-        </ul>
-      </nav>
-    </div>
   </header>
 
   <button class="hamburger-morph" aria-label="メニュー" aria-controls="morph-menu" aria-expanded="false">
@@ -38,16 +23,26 @@
     </svg>
   </button>
   
-  <nav id="morph-menu" class="nav-morph" aria-hidden="true">
-    <div class="nav-morph__wrapper">
-      <ul class="nav-morph__list"><!-- JS で #nav-list から複製して入れる --></ul>
-      <p class="nav-morph__social">MY ACCOUNT</p>
-      <div class="menu-social">
-        <a href="https://x.com/yourid" aria-label="X">X</a>
-        <a href="https://youtube.com/@yourid" aria-label="YouTube">YouTube</a>
-      </div>
+  <!-- ここは header の外、</header> 直後などにある #morph-menu 内 -->
+<nav id="morph-menu" class="nav-morph" aria-hidden="true">
+  <div class="nav-morph__wrapper">
+    <ul class="nav-morph__list">
+      <li class="nav-morph__item"><a class="nav-morph__link" href="#top">TOP</a></li>
+      <li class="nav-morph__item"><a class="nav-morph__link" href="#about">自己紹介</a></li>
+      <li class="nav-morph__item"><a class="nav-morph__link" href="#skills">スキル</a></li>
+      <li class="nav-morph__item"><a class="nav-morph__link" href="#projects">制作物</a></li>
+      <li class="nav-morph__item"><a class="nav-morph__link" href="#experience">経歴</a></li>
+      <li class="nav-morph__item"><a class="nav-morph__link" href="#contact">連絡先</a></li>
+    </ul>
+
+    <p class="nav-morph__social">MY ACCOUNT</p>
+    <div class="menu-social">
+      <a href="https://x.com/yourid" aria-label="X">X</a>
+      <a href="https://youtube.com/@yourid" aria-label="YouTube">YouTube</a>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <main id="main">
     <!-- Hero -->

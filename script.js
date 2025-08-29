@@ -11,16 +11,6 @@ themeToggle?.addEventListener('click', () => {
   localStorage.setItem('theme', next);
 });
 
-
-// ===== Mobile nav =====
-const navToggle = document.getElementById('nav-toggle');
-const navList = document.getElementById('nav-list');
-navToggle?.addEventListener('click', () => {
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-  navToggle.setAttribute('aria-expanded', String(!expanded));
-  navList.style.display = expanded ? 'none' : 'flex';
-});
-
 /// === Morph menu ===
 const hamburger = document.querySelector('.hamburger-morph');
 const morphNav  = document.getElementById('morph-menu');
