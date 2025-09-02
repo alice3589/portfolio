@@ -396,3 +396,7 @@ body { -ms-overflow-style: none; }       /* 旧Edge/IE */
 .menu-social a:hover img{
   transform: scale(1.1);   /* お好み：ホバーで少し拡大 */
 }
+
+html {
+  scroll-behavior: smooth;
+}
