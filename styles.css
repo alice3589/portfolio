@@ -14,6 +14,12 @@
   --container: 1100px;
 }
 
+:root{
+  /* ...既存トークン... */
+  --bg-img: url("assets/images/bg1.webp"); /* 初期背景を bg1 に */
+}
+
+
 @media (prefers-color-scheme: light){
   :root{
     --bg: #f7f9fc;
@@ -401,3 +407,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/* === 背景スイッチャ === */
+.bg-switcher{
+  position: fixed; top:20px; right:80px; z-index: 1100;
+  width: 40px; height: 40px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  font-size: 20px; line-height: 1; cursor: pointer;
+}
+.bg-panel{
+  position: fixed; top:68px; right:20px; z-index: 1100;
+  display: grid; grid-template-columns: repeat(3, 64px); gap: 8px;
+  padding: 10px; border:1px solid var(--border); border-radius:12px;
+  background: color-mix(in oklab, var(--surface), transparent 10%); box-shadow: var(--shadow);
+}
+.bg-panel[hidden]{ display:none; }
+.bg-panel .bg-option{
+  width:64px; height:64px; padding:0; border-radius:10px; border:1px solid var(--border);
+  background: var(--surface); cursor:pointer; overflow: hidden;
+}
+.bg-panel .bg-option img{ width:100%; height:100%; object-fit: cover; display:block; }
+.bg-panel .bg-option:hover{ transform: translateY(-1px); }
+.bg-panel .bg-none{ font-weight: 700; color: var(--text); }

@@ -120,3 +120,50 @@ function handleSubmit(e){
   window.location.href = mailto;
 }
 window.handleSubmit = handleSubmit;
+
+// === 背景切り替え（bg1/bg2/bg3 専用） ===
+const BG_KEY   = 'bg-img-url';
+const BG_LIST  = [
+  'assets/images/bg1.webp',
+  'assets/images/bg2.webp',
+  'assets/images/bg3.webp'
+];
+
+const bgPanel  = document.getElementById('bg-panel');
+const bgBtn    = document.getElementById('bg-switcher');
+
+function applyBg(url){
+  document.documentElement.style.setProperty('--bg-img', `url("${url}")`);
+  localStorage.setItem(BG_KEY, url);
+}
+
+// 保存復元（不正値なら bg1 にフォールバック）
+const savedBg = localStorage.getItem(BG_KEY);
+applyBg(BG_LIST.includes(savedBg) ? savedBg : BG_LIST[0]);
+
+bgBtn?.addEventListener('click', () => {
+  const open = bgPanel.hasAttribute('hidden');
+  if (open) {
+    bgPanel.removeAttribute('hidden');
+    bgBtn.setAttribute('aria-expanded', 'true');
+  } else {
+    bgPanel.setAttribute('hidden', '');
+    bgBtn.setAttribute('aria-expanded', 'false');
+  }
+});
+
+bgPanel?.querySelectorAll('.bg-option').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const url = btn.getAttribute('data-bg');
+    if (BG_LIST.includes(url)) applyBg(url);
+    bgPanel.setAttribute('hidden','');
+    bgBtn.setAttribute('aria-expanded','false');
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!bgPanel || !bgBtn) return;
+  const inside = bgPanel.contains(e.target) || bgBtn.contains(e.target);
+  if (!inside) { bgPanel.setAttribute('hidden',''); bgBtn.setAttribute('aria-expanded','false'); }
+});
+

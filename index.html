@@ -91,6 +91,25 @@
     </div>
   </nav>
 
+<!-- 背景切り替えボタン -->
+<button class="bg-switcher" id="bg-switcher"
+        aria-haspopup="true" aria-expanded="false" aria-controls="bg-panel"
+        title="背景を変更">🖼</button>
+
+<!-- 3枚固定のパネル -->
+<div class="bg-panel" id="bg-panel" hidden>
+  <button class="bg-option" data-bg="assets/images/bg1.webp" aria-label="bg1">
+    <img src="assets/images/bg1.webp" alt="">
+  </button>
+  <button class="bg-option" data-bg="assets/images/bg2.webp" aria-label="bg2">
+    <img src="assets/images/bg2.webp" alt="">
+  </button>
+  <button class="bg-option" data-bg="assets/images/bg3.webp" aria-label="bg3">
+    <img src="assets/images/bg3.webp" alt="">
+  </button>
+</div>
+
+
   <main id="main">
     <!-- Hero -->
     <section class="section hero" aria-label="ヒーロー">
