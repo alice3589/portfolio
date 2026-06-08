@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glow" cx="82%" cy="22%" r="55%">
+      <stop offset="0" stop-color="#ff3b1d" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ff3b1d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#f1eee5"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- 上部ラベル -->
+  <text x="80" y="120" fill="#8a8675" font-family="Archivo, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="10">PORTFOLIO — 2026</text>
+
+  <!-- 氏名（明朝・特大） -->
+  <text x="74" y="340" fill="#15120c" font-family="'Shippori Mincho', 'Yu Mincho', serif" font-size="220" font-weight="800" letter-spacing="6">岩崎<tspan fill="#ff3b1d">琉斗</tspan></text>
+
+  <!-- 手書き風（斜体の英字で代用） -->
+  <text x="80" y="430" fill="#4a463c" font-family="'Segoe Script','Comic Sans MS',cursive" font-size="58" font-style="italic">Creative Developer</text>
+
+  <!-- 下部メタ -->
+  <text x="80" y="555" fill="#4a463c" font-family="Archivo, Arial, sans-serif" font-size="28" font-weight="600">Web · Game · App / Speedrun Tools</text>
+  <text x="80" y="595" fill="#8a8675" font-family="Archivo, Arial, sans-serif" font-size="24">alice3589.github.io/portfolio</text>
+
+  <!-- アクセントの菱形マーク -->
+  <path d="M1080 470 L1130 520 L1080 570 L1030 520 Z" fill="#15120c"/>
+  <path d="M1080 488 L1112 520 L1080 552 L1048 520 Z" fill="#ff3b1d"/>
+</svg>
