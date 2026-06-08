@@ -68,6 +68,10 @@
       });
     }
 
+    // ===== 日本語手書き（Klee One を遅延ロード） =====
+    // バンドルが約2.7MBと大きいため、初期描画を妨げないようローダー後に読み込む
+    loadJapaneseHand();
+
     // ===== ヒーロー入場 =====
     const heroChars = document.querySelectorAll('.hero__title .line span');
     const tl = gsap.timeline();
@@ -138,6 +142,29 @@
       });
     }
   };
+
+  // ===== 日本語手書きの遅延ロード =====
+  async function loadJapaneseHand() {
+    const host = document.getElementById('aboutJp');
+    if (!host || host.dataset.loaded) return;
+    host.dataset.loaded = '1';
+    try {
+      const [{ TegakiEngine }, kleeMod] = await Promise.all([
+        import('https://esm.sh/tegaki@0.18.0/wc'),
+        import('https://esm.sh/tegaki@0.18.0/fonts/klee-one'),
+      ]);
+      TegakiEngine.registerBundle(kleeMod.default);
+      // 登録後に要素を生成すると確実に描画される
+      const el = document.createElement('tegaki-renderer');
+      el.setAttribute('font', 'Klee One');
+      el.setAttribute('text', 'ものづくりがすき');
+      el.setAttribute('speed', '1.3');
+      host.appendChild(el);
+    } catch (e) {
+      // 失敗してもサイト本体には影響させない（aria-label が代替テキスト）
+      console.warn('Klee One handwriting failed to load:', e);
+    }
+  }
 
   // ===== カスタムカーソル =====
   const cursor = document.getElementById('cursor');
