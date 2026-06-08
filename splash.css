@@ -1,9 +1,9 @@
 /* 色（SCSSの$変数をCSS変数へ） */
 :root{
-    --no7color:  #bbbbbb;
+    --no7color:  #8c8974;
     --no7color1: #7D070A;
-    --no7color2: #004466;
-    --no7color3: #E4E5E6;
+    --no7color2: #34312a;  /* テキスト: 墨色 */
+    --no7color3: #cbc8b1;  /* スプラッシュ地: サイトと同じサンドカラー */
   }
   
   /* 画面を覆うシャッター */
@@ -33,7 +33,7 @@
   #splash .animation-wrapper.notvisible{ display: none; }
   
   #splash .cat-wrapper{ width: 300px; }
-  #splash .cat{ width: 100%; overflow: visible; }
+  #splash .cat{ width: 100%; overflow: visible; fill: var(--no7color2); }
   #splash .eyes circle{ fill: #fff; }
   #splash .frontlegs, #splash .backlegs{ opacity: 1; }
   
