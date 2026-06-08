@@ -120,8 +120,14 @@ body.is-loading{ overflow: hidden; height: 100vh; }
 .header__nav a{ position: relative; }
 .header__nav a span{ color: var(--accent); margin-right: .25rem; font-size: .7rem; }
 .header__nav a::after{ content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: currentColor; transition: width .35s var(--ease); }
-.header__nav a:hover::after{ width: 100%; }
+.header__nav a:hover::after,
+.header__nav a.is-active::after{ width: 100%; }
+.header__nav a.is-active span{ opacity: 1; }
 @media (max-width: 640px){ .header__nav a span{ display: none; } .header__nav{ gap: 14px; } }
+
+/* スクロール進捗バー */
+.scroll-progress{ position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 850; pointer-events: none; }
+.scroll-progress span{ display: block; height: 100%; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; }
 
 /* =====================================================================
    ヒーロー

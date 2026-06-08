@@ -140,6 +140,25 @@
         yPercent: 24, ease: 'none',
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
       });
+
+      // ===== スクロール進捗バー =====
+      const bar = document.querySelector('.scroll-progress span');
+      if (bar) {
+        window.ScrollTrigger.create({
+          start: 0, end: 'max',
+          onUpdate: (self) => { bar.style.transform = `scaleX(${self.progress})`; },
+        });
+      }
+
+      // ===== 現在地ハイライト（scrollspy） =====
+      document.querySelectorAll('main section[id]').forEach((sec) => {
+        const link = document.querySelector(`.header__nav a[href="#${sec.id}"]`);
+        if (!link) return;
+        window.ScrollTrigger.create({
+          trigger: sec, start: 'top 45%', end: 'bottom 45%',
+          onToggle: (self) => link.classList.toggle('is-active', self.isActive),
+        });
+      });
     }
   };
 
