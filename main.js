@@ -185,9 +185,16 @@
   const loader = document.getElementById('loader');
   const numEl = document.getElementById('loaderNum');
   const barEl = document.getElementById('loaderBar');
+  let loadFinished = false;
   function finishLoad() {
+    if (loadFinished) return;
+    loadFinished = true;
     document.body.classList.remove('is-loading');
-    if (loader) loader.classList.add('is-done');
+    if (loader) {
+      loader.classList.add('is-done');
+      // カーテンが上がりきったら DOM から除去（写り込み・残留を防ぐ）
+      setTimeout(() => loader.remove(), 1100);
+    }
     start();
   }
   if (loader && numEl && barEl) {
