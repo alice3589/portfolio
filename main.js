@@ -193,18 +193,18 @@
   if (loader && numEl && barEl) {
     let p = 0;
     const tick = () => {
-      p += Math.max(1, (100 - p) * 0.06);
+      p += Math.max(1.4, (100 - p) * 0.085);
       if (p >= 100) p = 100;
       numEl.textContent = Math.floor(p);
       barEl.style.width = p + '%';
       if (p < 100) {
-        setTimeout(tick, 90);
+        setTimeout(tick, 55);
       } else {
-        setTimeout(finishLoad, 500);
+        setTimeout(finishLoad, 400);
       }
     };
     // フォント等の読み込みを少し待ってから開始
-    setTimeout(tick, 300);
+    setTimeout(tick, 250);
     // セーフティ: 6 秒で強制解除
     setTimeout(() => { if (document.body.classList.contains('is-loading')) finishLoad(); }, 6000);
   } else {
