@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440">
+  <defs>
+    <radialGradient id="mars" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#ff6b3d"/><stop offset="0.6" stop-color="#c43a1a"/><stop offset="1" stop-color="#7d2410"/></radialGradient>
+  </defs>
+  <rect width="640" height="440" fill="#0c0a08"/>
+  <ellipse cx="320" cy="220" rx="240" ry="120" fill="none" stroke="#3a342c" stroke-width="1.5"/>
+  <circle cx="340" cy="200" r="120" fill="url(#mars)"/>
+  <g fill="#7d2410" opacity="0.55">
+    <circle cx="300" cy="170" r="16"/><circle cx="380" cy="220" r="10"/><circle cx="330" cy="250" r="13"/><circle cx="395" cy="160" r="7"/>
+  </g>
+  <circle cx="120" cy="120" r="6" fill="#2bb3ff"/>
+  <text x="40" y="60" fill="#f1eee5" font-family="monospace" font-size="22" letter-spacing="4">TERRAFORMING MARS</text>
+  <text x="40" y="410" fill="#8a8675" font-family="monospace" font-size="16">JAVA 17 · MAVEN · SIMULATION</text>
+</svg>

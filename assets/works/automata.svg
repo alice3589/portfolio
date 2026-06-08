@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440">
+  <rect width="640" height="440" fill="#1a1812"/>
+  <circle cx="320" cy="210" r="150" fill="none" stroke="#f1eee5" stroke-width="2"/>
+  <circle cx="320" cy="210" r="100" fill="#f1eee5" opacity="0.06"/>
+  <circle cx="320" cy="210" r="46" fill="#ff3b1d"/>
+  <g stroke="#f1eee5" stroke-width="2" opacity="0.5">
+    <line x1="40" y1="120" x2="220" y2="120"/>
+    <line x1="420" y1="320" x2="600" y2="320"/>
+    <line x1="60" y1="360" x2="180" y2="360"/>
+  </g>
+  <text x="40" y="60" fill="#f1eee5" font-family="monospace" font-size="22" letter-spacing="4">2B // SPEEDRUN</text>
+  <text x="40" y="410" fill="#8a8675" font-family="monospace" font-size="16">C++ · REVERSE ENGINEERING</text>
+</svg>

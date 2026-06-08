@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440">
+  <defs><linearGradient id="night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2440"/><stop offset="1" stop-color="#0c1020"/></linearGradient></defs>
+  <rect width="640" height="440" fill="url(#night)"/>
+  <path d="M430 120 a78 78 0 1 0 0 156 a62 62 0 1 1 0 -156 Z" fill="#ffd23b"/>
+  <g fill="#f1eee5">
+    <circle cx="120" cy="110" r="2.5"/><circle cx="200" cy="80" r="2"/><circle cx="170" cy="170" r="1.8"/>
+    <circle cx="90" cy="220" r="2.2"/><circle cx="260" cy="150" r="1.6"/><circle cx="540" cy="300" r="2"/>
+  </g>
+  <text x="120" y="330" fill="#f1eee5" font-family="monospace" font-size="40" letter-spacing="6">Z z z</text>
+  <text x="40" y="410" fill="#8a8675" font-family="monospace" font-size="16">FLUTTER · DART · SLEEP TRACKER</text>
+</svg>

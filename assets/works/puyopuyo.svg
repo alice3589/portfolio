@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440">
+  <rect width="640" height="440" fill="#10131c"/>
+  <g>
+    <g transform="translate(220,150)"><circle r="48" fill="#ff3b1d"/><circle cx="-16" cy="-8" r="9" fill="#fff"/><circle cx="16" cy="-8" r="9" fill="#fff"/><circle cx="-16" cy="-8" r="4" fill="#10131c"/><circle cx="16" cy="-8" r="4" fill="#10131c"/></g>
+    <g transform="translate(330,200)"><circle r="48" fill="#3bd17a"/><circle cx="-16" cy="-8" r="9" fill="#fff"/><circle cx="16" cy="-8" r="9" fill="#fff"/><circle cx="-16" cy="-8" r="4" fill="#10131c"/><circle cx="16" cy="-8" r="4" fill="#10131c"/></g>
+    <g transform="translate(250,270)"><circle r="48" fill="#2bb3ff"/><circle cx="-16" cy="-8" r="9" fill="#fff"/><circle cx="16" cy="-8" r="9" fill="#fff"/><circle cx="-16" cy="-8" r="4" fill="#10131c"/><circle cx="16" cy="-8" r="4" fill="#10131c"/></g>
+    <g transform="translate(400,290)"><circle r="48" fill="#ffd23b"/><circle cx="-16" cy="-8" r="9" fill="#fff"/><circle cx="16" cy="-8" r="9" fill="#fff"/><circle cx="-16" cy="-8" r="4" fill="#10131c"/><circle cx="16" cy="-8" r="4" fill="#10131c"/></g>
+  </g>
+  <text x="40" y="60" fill="#f1eee5" font-family="monospace" font-size="22" letter-spacing="4">PUYO PUYO</text>
+  <text x="40" y="410" fill="#8a8675" font-family="monospace" font-size="16">TYPESCRIPT · GAME</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440">
+  <rect width="640" height="440" fill="#f1eee5"/>
+  <g shape-rendering="crispEdges">
+    <rect x="120" y="80" width="50" height="50" fill="#ff3b1d"/>
+    <rect x="170" y="80" width="50" height="50" fill="#15120c"/>
+    <rect x="220" y="80" width="50" height="50" fill="#2bb3ff"/>
+    <rect x="120" y="130" width="50" height="50" fill="#15120c"/>
+    <rect x="220" y="130" width="50" height="50" fill="#ffd23b"/>
+    <rect x="320" y="130" width="50" height="50" fill="#ff3b1d"/>
+    <rect x="370" y="130" width="50" height="50" fill="#15120c"/>
+    <rect x="270" y="180" width="50" height="50" fill="#3bd17a"/>
+    <rect x="370" y="180" width="50" height="50" fill="#2bb3ff"/>
+    <rect x="170" y="230" width="50" height="50" fill="#ffd23b"/>
+    <rect x="220" y="230" width="50" height="50" fill="#15120c"/>
+    <rect x="420" y="230" width="50" height="50" fill="#ff3b1d"/>
+  </g>
+  <text x="40" y="410" fill="#15120c" font-family="monospace" font-size="20" letter-spacing="3">PIXEL ART EDITOR</text>
+</svg>

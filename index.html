@@ -32,6 +32,12 @@
   <!-- ===== カスタムカーソル ===== -->
   <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
 
+  <!-- ===== フィルムグレイン ===== -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ===== 作品プレビュー（カーソル追従） ===== -->
+  <div class="works__preview" id="worksPreview" aria-hidden="true"><img alt="" src=""></div>
+
   <!-- ===== ヘッダー ===== -->
   <header class="header" id="header">
     <a class="header__brand" href="#top" data-cursor>岩崎琉斗<span>／ IR</span></a>
@@ -107,7 +113,7 @@
 
       <ul class="works__list">
         <li class="work" data-work>
-          <a class="work__link" href="https://github.com/alice3589/AutomataSpeedrunMod" target="_blank" rel="noopener" data-cursor="view">
+          <a class="work__link" href="https://github.com/alice3589/AutomataSpeedrunMod" target="_blank" rel="noopener" data-cursor data-preview="assets/works/automata.svg">
             <span class="work__idx">01</span>
             <h3 class="work__title">AutomataSpeedrunMod</h3>
             <p class="work__desc">NieR: Automata のスピードランを快適にする C++ 製 Mod。ゲーム内部の解析をもとに走行支援機能を実装。</p>
@@ -116,7 +122,7 @@
           </a>
         </li>
         <li class="work" data-work>
-          <a class="work__link" href="https://pixel-art-ebon.vercel.app" target="_blank" rel="noopener" data-cursor="view">
+          <a class="work__link" href="https://pixel-art-ebon.vercel.app" target="_blank" rel="noopener" data-cursor data-preview="assets/works/pixelart.svg">
             <span class="work__idx">02</span>
             <h3 class="work__title">PixelArt</h3>
             <p class="work__desc">ブラウザで動くドット絵エディタ。Canvas を使ったお絵描き・書き出し機能を備えた制作ツール。</p>
@@ -125,7 +131,7 @@
           </a>
         </li>
         <li class="work" data-work>
-          <a class="work__link" href="https://puyopuyo-brown.vercel.app" target="_blank" rel="noopener" data-cursor="view">
+          <a class="work__link" href="https://puyopuyo-brown.vercel.app" target="_blank" rel="noopener" data-cursor data-preview="assets/works/puyopuyo.svg">
             <span class="work__idx">03</span>
             <h3 class="work__title">ぷよぷよ</h3>
             <p class="work__desc">TypeScript で実装した落ちものパズル。連鎖判定や入力処理などゲームロジックを自前で構築。</p>
@@ -134,7 +140,7 @@
           </a>
         </li>
         <li class="work" data-work>
-          <a class="work__link" href="https://github.com/alice3589?tab=repositories&q=autosplitter" target="_blank" rel="noopener" data-cursor="view">
+          <a class="work__link" href="https://github.com/alice3589?tab=repositories&q=autosplitter" target="_blank" rel="noopener" data-cursor data-preview="assets/works/autosplitter.svg">
             <span class="work__idx">04</span>
             <h3 class="work__title">AutoSplitter コレクション</h3>
             <p class="work__desc">Made in Abyss・グランブルーファンタジー・原神など、複数タイトル向けの自動計測スクリプト（ASL）。</p>
@@ -143,7 +149,7 @@
           </a>
         </li>
         <li class="work is-private" data-work>
-          <div class="work__link" data-cursor>
+          <div class="work__link" data-cursor data-preview="assets/works/sleepledger.svg">
             <span class="work__idx">05</span>
             <h3 class="work__title">SleepLedger <em>非公開</em></h3>
             <p class="work__desc">睡眠の記録・分析を行う Flutter 製モバイルアプリ。Google Play リリースを目標に MVP を開発中。</p>
@@ -151,7 +157,7 @@
           </div>
         </li>
         <li class="work is-private" data-work>
-          <div class="work__link" data-cursor>
+          <div class="work__link" data-cursor data-preview="assets/works/mars.svg">
             <span class="work__idx">06</span>
             <h3 class="work__title">火星のテラフォーミング <em>非公開</em></h3>
             <p class="work__desc">Java 17 + Maven で火星環境のテラフォーミングをモデル化するシミュレーション。卒業研究として制作中。</p>

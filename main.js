@@ -159,6 +159,28 @@
     });
   }
 
+  // ===== 作品プレビュー（カーソル追従） =====
+  const preview = document.getElementById('worksPreview');
+  if (preview && !isTouch) {
+    const pImg = preview.querySelector('img');
+    let px = innerWidth / 2, py = innerHeight / 2, cx = px, cy = py;
+    const lerp = () => {
+      cx += (px - cx) * 0.14; cy += (py - cy) * 0.14;
+      preview.style.left = cx + 'px'; preview.style.top = cy + 'px';
+      requestAnimationFrame(lerp);
+    };
+    lerp();
+    addEventListener('mousemove', (e) => { px = e.clientX; py = e.clientY; });
+    document.querySelectorAll('[data-preview]').forEach((el) => {
+      const src = el.getAttribute('data-preview');
+      el.addEventListener('mouseenter', () => {
+        if (pImg.getAttribute('src') !== src) pImg.setAttribute('src', src);
+        preview.classList.add('is-visible');
+      });
+      el.addEventListener('mouseleave', () => preview.classList.remove('is-visible'));
+    });
+  }
+
   // ===== ローダー =====
   const loader = document.getElementById('loader');
   const numEl = document.getElementById('loaderNum');
