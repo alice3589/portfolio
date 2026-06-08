@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-theme="auto">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>岩崎 琉斗 — ポートフォリオ</title>
-  <meta name="description" content="岩崎 琉斗 (IWASAKI Ryuto) のポートフォリオ。Web・ゲーム・アプリ開発と、スピードラン向けツール制作の作品をまとめています。" />
-  <meta name="color-scheme" content="light" />
-
-  <!-- OGP -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="岩崎 琉斗 — ポートフォリオ" />
-  <meta property="og:description" content="Web・ゲーム・アプリ開発と、スピードラン向けツール制作の作品集。" />
-  <meta property="og:url" content="https://alice3589.github.io/portfolio/" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <title>ポートフォリオ — IWASAKI Ryuto</title>
+  <meta name="description" content="私の作品・スキル・経歴をまとめたポートフォリオサイトです。" />
+  <meta name="color-scheme" content="light dark" />
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="splash.css">
 
-  <!-- スプラッシュ用 GSAP（splash.js より先に読み込む） -->
+  <!-- GSAP は splash.js より前（defer なし）-->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script defer src="splash.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body>
 
-  <!-- オープニング スプラッシュ（猫アニメーション） -->
+  <!-- Opening Splash / Shutter -->
   <div id="splash">
     <div class="wrapper-no7">
+
       <div class="animation-wrapper">
         <div class="cat-wrapper">
+          <!-- SVG -->
           <svg class="cat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207.68 163.77" preserveAspectRatio="none">
             <title>cat</title>
             <g class="body">
@@ -63,24 +54,21 @@
       </div>
     </div>
   </div>
+  <!-- /#splash -->
 
-  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+  <a class="skip-link" href="#main">メインにスキップ</a>
 
-  <!-- ヘッダー -->
-  <header class="site-header" role="banner">
-    <a class="brand" href="#top"><span class="brand-mark">◆</span> IWASAKI&nbsp;Ryuto</a>
+  <header class="site-header" id="top" role="banner">
   </header>
 
-  <!-- ハンバーガー（モーフ） -->
-  <button class="hamburger-morph" aria-label="メニューを開く" aria-controls="morph-menu" aria-expanded="false">
-    <svg class="hamburger-morph__icon" width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+  <button class="hamburger-morph" aria-label="メニュー" aria-controls="morph-menu" aria-expanded="false">
+    <svg class="hamburger-morph__icon" width="48" height="48" viewBox="0 0 100 100" aria-hidden="true">
       <path class="hamburger-morph__line" d="M 20,29 H 80 C 80,29 94.5,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
       <path class="hamburger-morph__line" d="M 20,50 H 80" />
       <path class="hamburger-morph__line" d="M 20,71 H 80 C 80,71 94.5,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
     </svg>
   </button>
 
-  <!-- モーフメニュー オーバーレイ -->
   <nav id="morph-menu" class="nav-morph" aria-hidden="true">
     <div class="nav-morph__wrapper">
       <ul class="nav-morph__list">
@@ -90,214 +78,240 @@
         <li class="nav-morph__item"><a class="nav-morph__link" href="#experience">経歴</a></li>
         <li class="nav-morph__item"><a class="nav-morph__link" href="#contact">連絡先</a></li>
       </ul>
-      <p class="nav-morph__social">ACCOUNTS</p>
+
+      <p class="nav-morph__social">MY ACCOUNT</p>
       <div class="menu-social">
-        <a href="https://github.com/alice3589" target="_blank" rel="noopener" aria-label="GitHub">
-          <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" width="22" height="22" loading="lazy">
+        <a href="https://github.com/alice3589" aria-label="GitHub">
+          <img src="https://cdn.simpleicons.org/github" alt="GitHub" width="24" height="24" loading="lazy">
         </a>
-        <a href="https://www.youtube.com/@alice_3589" target="_blank" rel="noopener" aria-label="YouTube">
-          <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube" width="22" height="22" loading="lazy">
+        <a href="https://www.youtube.com/@alice_3589" aria-label="YouTube">
+          <img src="https://cdn.simpleicons.org/youtube" alt="YouTube" width="24" height="24" loading="lazy">
         </a>
       </div>
     </div>
   </nav>
 
-  <main id="main">
+<!-- 背景切り替えボタン -->
+<button class="bg-switcher" id="bg-switcher"
+        aria-haspopup="true" aria-expanded="false" aria-controls="bg-panel"
+        title="背景を変更">🖼</button>
 
-    <!-- ヒーロー -->
-    <section class="section hero" id="top" aria-label="ヒーロー">
+<!-- 3枚固定のパネル -->
+<div class="bg-panel" id="bg-panel" hidden>
+  <button class="bg-option" data-bg="assets/images/bg1.webp" aria-label="bg1">
+    <img src="assets/images/bg1.webp" alt="">
+  </button>
+  <button class="bg-option" data-bg="assets/images/bg2.webp" aria-label="bg2">
+    <img src="assets/images/bg2.webp" alt="">
+  </button>
+  <button class="bg-option" data-bg="assets/images/bg3.webp" aria-label="bg3">
+    <img src="assets/images/bg3.webp" alt="">
+  </button>
+</div>
+
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="section hero" aria-label="ヒーロー">
       <div class="container grid-2">
-        <div class="stack gap-2">
-          <p class="eyebrow">Portfolio — 2026</p>
-          <h1 class="headline">岩崎 琉斗<span class="accent">IWASAKI RYUTO</span></h1>
+        <div class="stack gap-3">
+          <p class="eyebrow">こんにちは、</p>
+          <h1 class="headline">岩崎 琉斗<span class="accent"> / IWASAKI Ryuto</span></h1>
           <p class="lede">
-            Web・ゲーム・アプリ開発を学ぶ専門学校生です。普段は Java を軸に、
-            Flutter でのアプリ制作や、スピードラン（RTA）向けの解析ツール・Mod づくりに取り組んでいます。
-            「動くもの」を作りながら学ぶのが好きです。
+            Web / ゲーム / アプリ開発に取り組むエンジニア・クリエイターです。ユーザーに価値を届けるUI・性能・体験づくりが得意です。
           </p>
-          <div class="row wrap gap-1">
+          <div class="row gap-2">
             <a class="btn primary" href="#projects">制作物を見る</a>
-            <a class="btn" href="https://github.com/alice3589" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="#contact">連絡する</a>
           </div>
         </div>
-        <div class="hero-portrait reveal" aria-hidden="false">
-          <img src="assets/images/icon.jpg" alt="岩崎 琉斗 のアイコン">
+
+        <div class="card hero-card reveal" aria-hidden="true">
+          <div class="hero-art" role="img" aria-label="プロフィール画像">
+            <img src="assets/images/icon.jpg" alt="それっぽい画像">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 自己紹介 -->
+    <!-- About -->
     <section class="section" id="about" aria-label="自己紹介">
       <div class="container grid-2">
-        <div class="stack gap-1">
-          <div class="section-head"><h2>自己紹介</h2></div>
-          <p>
-            三重県を拠点に、専門学校で情報系を学んでいます。卒業研究では Java 17 / Maven を使った
-            「火星のテラフォーミング」シミュレーションに取り組み中です。
-          </p>
-          <p>
-            ゲームのスピードランが好きで、その延長で AutoSplitter（自動計測）や速度向上 Mod、
-            走行分析ツールを自作しています。学習用に Java の入門サイトを公開するなど、
-            「学んだことを形に残す」ことを大切にしています。
-          </p>
+        <div class="stack gap-2">
+          <h2>自己紹介</h2>
+          <p>Java を軸に、Flutter でのアプリ開発や、C++ でのゲームツール・Mod 制作に取り組んでいます。学んだことを形に残すのが好きです。</p>
           <ul class="checklist">
-            <li>ユーザー視点での UI・体験づくり</li>
-            <li>計測・解析・自動化ツールの設計</li>
-            <li>学習内容のドキュメント化と公開</li>
+            <li>ユーザー中心の設計と思考</li>
+            <li>パフォーマンス最適化・アクセシビリティ</li>
+            <li>チーム開発・ドキュメント作成</li>
           </ul>
-          <div class="row wrap gap-1" style="margin-top:1rem">
-            <a class="chip" href="https://github.com/alice3589" target="_blank" rel="noopener">GitHub</a>
-            <a class="chip" href="https://www.youtube.com/@alice_3589" target="_blank" rel="noopener">YouTube</a>
+          <div class="row gap-1">
+            <a class="chip" href="https://github.com/alice3589" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            <a class="chip" href="https://www.youtube.com/@alice_3589" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
           </div>
         </div>
 
         <div class="card reveal">
           <h3>基本情報</h3>
           <dl class="meta">
-            <dt>活動拠点</dt><dd>日本 / 三重県</dd>
-            <dt>所属</dt><dd>専門学校（情報系・卒研中）</dd>
-            <dt>得意領域</dt><dd>Web / ゲームツール / 自動化</dd>
-            <dt>使用言語</dt><dd>Java, Dart, JS / TS, C++, Python, Rust</dd>
-            <dt>興味</dt><dd>UI デザイン, 高速化, RTA, 体験設計</dd>
+            <div><dt>活動拠点</dt><dd>日本 / 三重県</dd></div>
+            <div><dt>得意領域</dt><dd>Web / ゲームツール / 自動化</dd></div>
+            <div><dt>使用言語</dt><dd>Java, Dart, JS/TS, C++, Python, Rust</dd></div>
+            <div><dt>興味</dt><dd>UIデザイン, 高速化, RTA, 体験設計</dd></div>
           </dl>
         </div>
       </div>
     </section>
 
-    <!-- スキル -->
+    <!-- Skills -->
     <section class="section alt" id="skills" aria-label="スキル">
       <div class="container">
-        <div class="section-head"><h2>スキル</h2></div>
+        <h2>スキル</h2>
         <ul class="skill-grid reveal" aria-label="スキル一覧">
-          <li class="skill"><img src="https://cdn.simpleicons.org/openjdk" alt="Java" loading="lazy"><span>Java</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/dart" alt="Dart" loading="lazy"><span>Dart</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/flutter" alt="Flutter" loading="lazy"><span>Flutter</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" loading="lazy"><span>TypeScript</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/react" alt="React" loading="lazy"><span>React</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js" loading="lazy"><span>Next.js</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/cplusplus" alt="C++" loading="lazy"><span>C++</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/rust" alt="Rust" loading="lazy"><span>Rust</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/python" alt="Python" loading="lazy"><span>Python</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/html5" alt="HTML5" loading="lazy"><span>HTML</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/css" alt="CSS" loading="lazy"><span>CSS</span></li>
-          <li class="skill"><img src="https://cdn.simpleicons.org/git" alt="Git" loading="lazy"><span>Git</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/html5" alt="HTML5 logo" loading="lazy"><span>HTML</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/css" alt="CSS logo" loading="lazy"><span>CSS</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript logo" loading="lazy"><span>JavaScript</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript logo" loading="lazy"><span>TypeScript</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/react" alt="React logo" loading="lazy"><span>React</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js logo" loading="lazy"><span>Next.js</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/flutter" alt="Flutter logo" loading="lazy"><span>Flutter</span></li>
+          <li class="skill"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java logo" loading="lazy"><span>Java</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/cplusplus" alt="C++ logo" loading="lazy"><span>C++</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/rust" alt="Rust logo" loading="lazy"><span>Rust</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/python" alt="Python logo" loading="lazy"><span>Python</span></li>
+          <li class="skill"><img src="https://cdn.simpleicons.org/git" alt="Git logo" loading="lazy"><span>Git</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- 制作物 -->
+    <!-- Projects -->
     <section class="section" id="projects" aria-label="制作物">
       <div class="container">
-        <div class="section-head"><h2>制作物</h2></div>
+        <div class="row between center">
+          <h2>制作物</h2>
+          <a class="link" href="https://github.com/alice3589?tab=repositories" target="_blank" rel="noopener" aria-label="すべて見る">すべて見る →</a>
+        </div>
 
         <div class="grid-3 cards reveal">
 
-          <article class="project card">
-            <h3><a href="https://alice3589.github.io/java-basics/" target="_blank" rel="noopener">Java 基礎学習サイト</a></h3>
-            <p>Java をゼロから学べる学習用 Web サイト。入門からデザインパターンまで全 35 章を収録し、授業のシラバスにも対応。</p>
-            <div class="links">
-              <a href="https://alice3589.github.io/java-basics/" target="_blank" rel="noopener">サイトを開く ↗</a>
-              <a href="https://github.com/alice3589/java-basics" target="_blank" rel="noopener">GitHub</a>
+          <article class="card">
+            <div class="thumb"><div class="thumb-art"></div></div>
+            <h3>AutomataSpeedrunMod</h3>
+            <p class="muted">NieR: Automata のスピードランを快適にする C++ 製 Mod。ゲーム内部の解析をもとに走行支援機能を実装。</p>
+            <div class="row gap-1 wrap">
+              <span class="tag small">C++</span>
+              <span class="tag small">RE</span>
+              <span class="tag small">Speedrun</span>
             </div>
-            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">教育</span></div>
-          </article>
-
-          <article class="project card">
-            <h3><a href="https://github.com/alice3589/AutomataSpeedrunMod" target="_blank" rel="noopener">AutomataSpeedrunMod</a></h3>
-            <p>NieR: Automata のスピードランを快適にするための C++ 製 Mod。ゲーム内部の解析をもとに走行支援機能を実装。</p>
-            <div class="links">
-              <a href="https://github.com/alice3589/AutomataSpeedrunMod" target="_blank" rel="noopener">GitHub</a>
+            <div class="row gap-2" style="margin-top:.8rem">
+              <a class="btn sm ghost" href="https://github.com/alice3589/AutomataSpeedrunMod" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <div class="tags"><span class="tag">C++</span><span class="tag">リバースエンジニアリング</span><span class="tag">Speedrun</span></div>
           </article>
 
-          <article class="project card">
-            <h3><a href="https://alice3589.github.io/nier-automata-presentation/" target="_blank" rel="noopener">NieR プレゼンテーション</a></h3>
-            <p>「すごい CG・ゲームデザイン」をテーマにした Web スライド。GSAP による演出で、デザインの魅力を解説。</p>
-            <div class="links">
-              <a href="https://alice3589.github.io/nier-automata-presentation/" target="_blank" rel="noopener">スライドを開く ↗</a>
-              <a href="https://github.com/alice3589/nier-automata-presentation" target="_blank" rel="noopener">GitHub</a>
+          <article class="card">
+            <div class="thumb"><div class="thumb-art"></div></div>
+            <h3>PixelArt</h3>
+            <p class="muted">ブラウザで動くドット絵エディタ。Canvas を使ったお絵描き・書き出し機能を備えた制作ツール。</p>
+            <div class="row gap-1 wrap">
+              <span class="tag small">JavaScript</span>
+              <span class="tag small">Canvas</span>
             </div>
-            <div class="tags"><span class="tag">HTML</span><span class="tag">GSAP</span><span class="tag">演出</span></div>
-          </article>
-
-          <article class="project card">
-            <h3><a href="https://pixel-art-ebon.vercel.app" target="_blank" rel="noopener">PixelArt</a></h3>
-            <p>ブラウザで動くドット絵エディタ。Canvas を使ったお絵描き・書き出し機能を備えた制作ツール。</p>
-            <div class="links">
-              <a href="https://pixel-art-ebon.vercel.app" target="_blank" rel="noopener">デモを開く ↗</a>
-              <a href="https://github.com/alice3589/PixelArt" target="_blank" rel="noopener">GitHub</a>
+            <div class="row gap-2" style="margin-top:.8rem">
+              <a class="btn sm ghost" href="https://pixel-art-ebon.vercel.app" target="_blank" rel="noopener">デモ</a>
+              <a class="btn sm ghost" href="https://github.com/alice3589/PixelArt" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <div class="tags"><span class="tag">JavaScript</span><span class="tag">Canvas</span></div>
           </article>
 
-          <article class="project card">
-            <h3><a href="https://puyopuyo-brown.vercel.app" target="_blank" rel="noopener">ぷよぷよ</a></h3>
-            <p>TypeScript で実装した落ちものパズルゲーム。連鎖判定や入力処理など、ゲームロジックを自前で構築。</p>
-            <div class="links">
-              <a href="https://puyopuyo-brown.vercel.app" target="_blank" rel="noopener">プレイする ↗</a>
-              <a href="https://github.com/alice3589/puyopuyo" target="_blank" rel="noopener">GitHub</a>
+          <article class="card">
+            <div class="thumb"><div class="thumb-art"></div></div>
+            <h3>ぷよぷよ</h3>
+            <p class="muted">TypeScript で実装した落ちものパズル。連鎖判定や入力処理などゲームロジックを自前で構築。</p>
+            <div class="row gap-1 wrap">
+              <span class="tag small">TypeScript</span>
+              <span class="tag small">ゲーム</span>
             </div>
-            <div class="tags"><span class="tag">TypeScript</span><span class="tag">ゲーム</span></div>
-          </article>
-
-          <article class="project card">
-            <h3><a href="https://github.com/alice3589?tab=repositories&q=autosplitter" target="_blank" rel="noopener">AutoSplitter コレクション</a></h3>
-            <p>Made in Abyss・グランブルーファンタジー・原神など、複数タイトル向けの自動計測スクリプト（ASL）を公開。</p>
-            <div class="links">
-              <a href="https://github.com/alice3589?tab=repositories&q=autosplitter" target="_blank" rel="noopener">GitHub</a>
+            <div class="row gap-2" style="margin-top:.8rem">
+              <a class="btn sm ghost" href="https://puyopuyo-brown.vercel.app" target="_blank" rel="noopener">プレイ</a>
+              <a class="btn sm ghost" href="https://github.com/alice3589/puyopuyo" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <div class="tags"><span class="tag">ASL</span><span class="tag">LiveSplit</span><span class="tag">Speedrun</span></div>
           </article>
 
-          <article class="project card">
-            <span class="badge">非公開</span>
-            <h3>SleepLedger</h3>
-            <p>睡眠の記録・分析を行う Flutter 製モバイルアプリ。Google Play でのリリースを目標に MVP を開発中。</p>
-            <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">開発中</span></div>
+          <article class="card">
+            <div class="thumb"><div class="thumb-art"></div></div>
+            <h3>AutoSplitter コレクション</h3>
+            <p class="muted">Made in Abyss・グランブルーファンタジー・原神など、複数タイトル向けの自動計測スクリプト（ASL）。</p>
+            <div class="row gap-1 wrap">
+              <span class="tag small">ASL</span>
+              <span class="tag small">LiveSplit</span>
+              <span class="tag small">Speedrun</span>
+            </div>
+            <div class="row gap-2" style="margin-top:.8rem">
+              <a class="btn sm ghost" href="https://github.com/alice3589?tab=repositories&q=autosplitter" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </article>
 
-          <article class="project card">
-            <span class="badge">非公開</span>
-            <h3>卒業研究 / 火星のテラフォーミング</h3>
-            <p>Java 17 + Maven で火星環境のテラフォーミングをモデル化するシミュレーション。卒業研究として制作中。</p>
-            <div class="tags"><span class="tag">Java 17</span><span class="tag">Maven</span><span class="tag">シミュレーション</span></div>
+          <article class="card">
+            <div class="thumb"><div class="thumb-art"></div></div>
+            <h3>SleepLedger <small class="muted">（非公開）</small></h3>
+            <p class="muted">睡眠の記録・分析を行う Flutter 製モバイルアプリ。Google Play リリースを目標に MVP を開発中。</p>
+            <div class="row gap-1 wrap">
+              <span class="tag small">Flutter</span>
+              <span class="tag small">Dart</span>
+              <span class="tag small">開発中</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="thumb-art"></div></div>
+            <h3>卒業研究 / 火星のテラフォーミング <small class="muted">（非公開）</small></h3>
+            <p class="muted">Java 17 + Maven で火星環境のテラフォーミングをモデル化するシミュレーション。卒業研究として制作中。</p>
+            <div class="row gap-1 wrap">
+              <span class="tag small">Java 17</span>
+              <span class="tag small">Maven</span>
+              <span class="tag small">シミュレーション</span>
+            </div>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- 経歴 -->
+    <!-- Experience -->
     <section class="section alt" id="experience" aria-label="経歴">
       <div class="container">
-        <div class="section-head"><h2>経歴・活動</h2></div>
+        <h2>経歴</h2>
         <ol class="timeline reveal">
           <li>
             <div class="dot"></div>
-            <h3>卒業研究 <small>2026 — 現在</small></h3>
-            <p class="muted">火星のテラフォーミングをテーマにした Java シミュレーションを開発。設計・実装・検証を一貫して担当。</p>
+            <div class="content">
+              <h3>卒業研究 <small>2026 — 現在</small></h3>
+              <p class="muted">火星のテラフォーミングをテーマにした Java シミュレーションを開発。設計・実装・検証を担当。</p>
+            </div>
           </li>
           <li>
             <div class="dot"></div>
-            <h3>個人開発・学習サイト公開 <small>2025 — 現在</small></h3>
-            <p class="muted">Java 入門サイトや各種 Web アプリを制作・公開。学んだ内容をドキュメントとして残す活動を継続。</p>
+            <div class="content">
+              <h3>個人開発・学習サイト公開 <small>2025 — 現在</small></h3>
+              <p class="muted">各種 Web アプリや学習用サイトを制作・公開。学んだ内容をドキュメントとして残す活動を継続。</p>
+            </div>
           </li>
           <li>
             <div class="dot"></div>
-            <h3>スピードラン向けツール制作 <small>2024 — 現在</small></h3>
-            <p class="muted">NieR: Automata の速度向上 Mod や、複数タイトルの AutoSplitter を自作。RTA コミュニティ向けに公開。</p>
+            <div class="content">
+              <h3>スピードラン向けツール制作 <small>2024 — 現在</small></h3>
+              <p class="muted">NieR: Automata の速度向上 Mod や、複数タイトルの AutoSplitter を自作し RTA コミュニティ向けに公開。</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- 連絡先 -->
+    <!-- Contact -->
     <section class="section" id="contact" aria-label="連絡先">
       <div class="container grid-2">
-        <div class="stack gap-1">
-          <div class="section-head"><h2>連絡先</h2></div>
-          <p>制作のご相談・ご感想などお気軽にどうぞ。下のフォームからメールを作成できます。</p>
+        <div class="stack gap-2">
+          <h2>連絡先</h2>
+          <p>お仕事のご相談、ご提案などお気軽にどうぞ。</p>
           <ul class="list">
             <li>メール: <a href="mailto:ryutoiwa2929@gmail.com">ryutoiwa2929@gmail.com</a></li>
             <li>GitHub: <a href="https://github.com/alice3589" target="_blank" rel="noopener">github.com/alice3589</a></li>
@@ -305,25 +319,21 @@
           </ul>
         </div>
         <form class="card form reveal" aria-label="お問い合わせフォーム" onsubmit="handleSubmit(event)">
-          <label for="f-name">お名前</label>
-          <input id="f-name" name="name" required placeholder="山田 太郎">
-          <label for="f-email">メールアドレス</label>
-          <input id="f-email" type="email" name="email" required placeholder="you@example.com">
-          <label for="f-subject">件名</label>
-          <input id="f-subject" name="subject" placeholder="ご用件">
-          <label for="f-message">内容</label>
-          <textarea id="f-message" name="message" rows="5" required placeholder="お問い合わせ内容"></textarea>
-          <button class="btn primary" type="submit">メールを作成</button>
-          <p class="muted xs" style="margin-top:.6rem">※ 送信ボタンでメールアプリが起動します（バックエンド不要）。</p>
+          <label>お名前 <input name="name" required placeholder="山田 太郎"></label>
+          <label>メール <input type="email" name="email" required placeholder="you@example.com"></label>
+          <label>件名 <input name="subject" placeholder="ご用件"></label>
+          <label>内容 <textarea name="message" rows="5" required placeholder="お問い合わせ内容"></textarea></label>
+          <button class="btn primary" type="submit">送信（メール作成）</button>
+          <p class="muted xs">※ このフォームはメールクライアントを起動する簡易版です。バックエンド不要。</p>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container row between">
-      <small>© <span id="year"></span> 岩崎 琉斗 / IWASAKI Ryuto</small>
-      <a class="btn sm" href="#top">↑ トップへ</a>
+    <div class="container row between center wrap gap-1">
+      <small>© <span id="year"></span> 岩崎 琉斗</small>
+      <a class="btn sm ghost" href="#top">↑ トップへ</a>
     </div>
   </footer>
 </body>
